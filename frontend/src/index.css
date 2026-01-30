@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  
+  body {
+    @apply bg-white text-accent-900 font-body;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Custom Button Styles */
+  .btn-primary {
+    @apply px-8 py-3 bg-accent-900 text-white font-medium tracking-wide uppercase text-sm 
+           hover:bg-accent-800 transition-all duration-300 
+           transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border-2 border-accent-900 text-accent-900 font-medium tracking-wide uppercase text-sm 
+           hover:bg-accent-900 hover:text-white transition-all duration-300;
+  }
+
+  /* Section Styles */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  /* Card Hover Effects */
+  .product-card {
+  @apply relative overflow-hidden cursor-pointer bg-white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+  .product-card:hover {
+    @apply shadow-2xl;
+    transform: translateY(-8px);
+  }
+
+  .product-card-image {
+    @apply w-full aspect-[3/4] object-cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .product-card:hover .product-card-image {
+    transform: scale(1.08);
+  }
+
+  /* Heading Styles */
+  .heading-primary {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold text-accent-900 tracking-tight;
+  }
+
+  .heading-secondary {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-accent-900;
+  }
+
+  .heading-tertiary {
+    @apply font-display text-2xl md:text-3xl font-semibold text-accent-900;
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  /* Decorative Line */
+  .decorative-line {
+    @apply relative;
+  }
+
+  .decorative-line::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-20 h-1 bg-primary-500;
+  }
+
+  /* Input Styles */
+  .input-field {
+    @apply w-full px-4 py-3 border border-accent-300 
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-300;
+  }
+
+  /* Navbar blur effect */
+  .nav-blur {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Instagram grid */
+  .instagram-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-400 hover:bg-primary-500;
+  border-radius: 5px;
+}
+
+/* Page Transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Image Overlay */
+.image-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent 
+         opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+}
+
+/* Luxury Gold Accent */
+.gold-accent {
+  @apply text-primary-500;
+}
+
+/* Section Divider */
+.section-divider {
+  @apply relative h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent my-16;
+}
