@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Instagram, ShoppingBag, Users } from 'lucide-react';
+import ImageCarousel3D from "../components/ImageCarousel3D";
+import Enhancedctasection from "../components/Enhancedctasection";
 
 const Home = () => {
   const collections = [
@@ -55,7 +57,7 @@ const Home = () => {
           <div className="absolute top-20 left-10 w-80 h-80 bg-primary-400 rounded-full blur-md"></div>
           <div className="absolute bottom-20 right-10 w-100 h-100 bg-accent-400 rounded-full blur-md"></div>
         </div>
-        
+
         <div className="relative section-container text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -68,17 +70,17 @@ const Home = () => {
                 Welcome to Rithaara Fashions
               </span>
             </div>
-            
+
             <h1 className="heading-primary text-4xl font-extrabold leading-tight">
               Where Style Meets
               <span className="block text-gradient mt-2 text-5xl">Elegance</span>
             </h1>
-            
+
             <p className="text-accent-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Discover our curated collection of premium fashion for men and women. 
+              Discover our curated collection of premium fashion for men and women.
               Each piece tells a story of craftsmanship, quality, and timeless style.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <a
                 href="https://www.instagram.com/rithaara_fashions/"
@@ -190,7 +192,7 @@ const Home = () => {
       </section>
 
       {/* Instagram Feed Section */}
-      <section className="section-container bg-white">
+      <section className="section-container bg-gradient-to-b from-white to-primary-50">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -239,9 +241,28 @@ const Home = () => {
           ))}
         </div>
       </section>
+      
+      {/* 3D Image Carousel Section */}
+      <section className="section-container bg-gradient-to-b from-white to-primary-50">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="heading-secondary mb-4 text-3xl font-semibold">
+            Best Selling Collections
+          </h2>
+          <p className="text-accent-600 text-lg max-w-2xl mx-auto">
+            Our most loved styles, chosen by customers just like you
+          </p>
+          <ImageCarousel3D />
+        </motion.div>
+
+      </section>
 
       {/* CTA Section */}
-      <section className="section-container bg-gradient-to-br from-accent-900 via-accent-800 to-accent-900 text-white">
+      {/* <section className="section-container bg-gradient-to-br from-accent-900 via-accent-800 to-accent-900 text-white">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -272,7 +293,7 @@ const Home = () => {
             </Link>
           </div>
         </motion.div>
-      </section>
+      </section> */}
     </div>
   );
 }

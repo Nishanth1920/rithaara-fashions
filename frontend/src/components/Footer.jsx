@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-accent-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Info */}
           <div className="space-y-4">
@@ -26,7 +26,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919003456006"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center hover:bg-green-500 transition-colors"
@@ -88,16 +88,16 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
                 <span className="text-accent-300 text-sm">
-                  Madurai, Tamil Nadu, India
+                  Kottar, Nagercoil, Tamil Nadu, India
                 </span>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919003456006"
                   className="text-accent-300 hover:text-primary-400 transition-colors text-sm"
                 >
-                  +91 98765 43210
+                  +91 9003456006
                 </a>
               </li>
               <li className="flex items-start space-x-3">
@@ -114,12 +114,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-accent-700 mt-8 pt-8 text-center">
+        <div className="border-t border-accent-700 mt-4 pt-4 text-center">
           <p className="text-accent-400 text-sm">
             &copy; {currentYear} Rithaara Fashions. All rights reserved.
-          </p>
-          <p className="text-accent-500 text-xs mt-2">
-            Crafted with excellence | Designed for you
           </p>
         </div>
       </div>

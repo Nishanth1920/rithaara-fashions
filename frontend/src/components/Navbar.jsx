@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Instagram, ShoppingBag } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import logo from '../assets/home-images/logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,7 +39,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <ShoppingBag className="w-6 h-6 text-primary-600 group-hover:text-primary-700 transition-colors" />
+            <img src={logo} alt="Rithaara Fashions Logo" className="w-12 h-12 text-primary-600 group-hover:text-primary-700 transition-colors" />
             <span className="font-display text-2xl md:text-3xl font-bold text-accent-900 tracking-tight">
               Rithaara
             </span>
