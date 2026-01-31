@@ -1,77 +1,110 @@
-import { Link } from 'react-router-dom'
-import { Instagram, Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
+import { useEffect, useState } from "react";
+import { Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "home",
+        "features",
+        "collections",
+        "testimonials",
+        "instagram",
+        "contact",
+      ];
+
+      const current = sections.find((section) => {
+        const el = document.getElementById(section);
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        return rect.top <= 120 && rect.bottom >= 120;
+      });
+
+      if (current) setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    window.scrollTo({
+      top: el.offsetTop - 80,
+      behavior: "smooth",
+    });
+  };
+
+  const navLinks = [
+    { name: "Home", id: "home" },
+    { name: "Features", id: "features" },
+    { name: "Collections", id: "collections" },
+    { name: "Reviews", id: "testimonials" },
+    { name: "Instagram", id: "instagram" },
+    { name: "Contact", id: "contact" },
+  ];
 
   return (
     <footer className="bg-accent-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Info */}
+
+          {/* Brand */}
           <div className="space-y-4">
-            <h3 className="font-display text-2xl font-bold">Rithaara Fashions</h3>
-            <p className="text-accent-300 text-sm leading-relaxed">
-              Your destination for premium fashion. Discover exclusive collections
-              that blend traditional elegance with modern style.
+            <h3 className="text-2xl font-bold font-display">
+              Rithaara Fashions
+            </h3>
+            <p className="text-accent-300 text-sm">
+              Premium fashion blending traditional elegance with modern style.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex gap-4">
               <a
                 href="https://www.instagram.com/rithaara_fashions/"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center hover:bg-primary-500 transition-colors"
-                aria-label="Instagram"
+                className="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center hover:bg-primary-500"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram size={18} />
               </a>
               <a
                 href="https://wa.me/919003456006"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center hover:bg-green-500 transition-colors"
-                aria-label="WhatsApp"
+                className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center hover:bg-green-500"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle size={18} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-accent-300 hover:text-primary-400 transition-colors text-sm">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/men" className="text-accent-300 hover:text-primary-400 transition-colors text-sm">
-                  Men's Collection
-                </Link>
-              </li>
-              <li>
-                <Link to="/women" className="text-accent-300 hover:text-primary-400 transition-colors text-sm">
-                  Women's Collection
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-accent-300 hover:text-primary-400 transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-accent-300 hover:text-primary-400 transition-colors text-sm">
-                  Contact
-                </Link>
-              </li>
+            <h4 className="text-lg font-semibold mb-4 font-display">
+              Quick Links
+            </h4>
+            <ul className="space-y-1">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className={`relative text-sm transition-colors text-accent-300 hover:text-rose-400`}
+                  >
+                    {link.name}
+                    
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Collections */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4">Collections</h4>
+            <h4 className="text-lg font-semibold mb-4 font-display">
+              Collections
+            </h4>
             <ul className="space-y-2 text-sm text-accent-300">
               <li>Traditional Wear</li>
               <li>Casual Collection</li>
@@ -81,31 +114,23 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                <span className="text-accent-300 text-sm">
-                  Kottar, Nagercoil, Tamil Nadu, India
-                </span>
+            <h4 className="text-lg font-semibold mb-4 font-display">
+              Contact Us
+            </h4>
+            <ul className="space-y-3 text-sm text-accent-300">
+              <li className="flex gap-3">
+                <MapPin size={18} className="text-primary-400" />
+                Kottar, Nagercoil, Tamil Nadu
               </li>
-              <li className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                <a
-                  href="tel:+919003456006"
-                  className="text-accent-300 hover:text-primary-400 transition-colors text-sm"
-                >
-                  +91 9003456006
-                </a>
+              <li className="flex gap-3">
+                <Phone size={18} className="text-primary-400" />
+                <a href="tel:+919003456006">+91 9003456006</a>
               </li>
-              <li className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                <a
-                  href="mailto:info@rithaarafashions.com"
-                  className="text-accent-300 hover:text-primary-400 transition-colors text-sm"
-                >
+              <li className="flex gap-3">
+                <Mail size={18} className="text-primary-400" />
+                <a href="mailto:info@rithaarafashions.com">
                   info@rithaarafashions.com
                 </a>
               </li>
@@ -113,15 +138,15 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-accent-700 mt-4 pt-4 text-center">
+        {/* Bottom */}
+        <div className="border-t border-accent-700 mt-8 pt-4 text-center">
           <p className="text-accent-400 text-sm">
-            &copy; {currentYear} Rithaara Fashions. All rights reserved.
+            © {currentYear} Rithaara Fashions. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
