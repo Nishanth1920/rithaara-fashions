@@ -64,14 +64,14 @@ const ImageCarousel = () => {
               onClick={() => setActive(index)}
             >
               <div className="relative w-[200px] h-[300px] md:w-[240px] md:h-[360px]
-    rounded-xl overflow-hidden bg-white
-    shadow-md hover:shadow-lg transition-shadow"
+    rounded-xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-shadow"
               >
                 <a
                   href="https://www.instagram.com/rithaara_fashions/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=""
+                  onClick={(e) => e.stopPropagation()}
+                  className="block w-full h-full"
                 >
                   <img
                     src={img}
@@ -79,17 +79,17 @@ const ImageCarousel = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
 
-
-
                   <div className="absolute inset-0 bg-black/50 opacity-0
-      group-hover:opacity-100 transition-opacity
-      flex items-center justify-center"
+        group-hover:opacity-100 transition-opacity
+        flex items-center justify-center
+        pointer-events-none"
                   >
                     <Instagram className="w-8 h-8 text-white" />
                   </div>
-                  </a>
+                </a>
               </div>
             </motion.div>
+
           );
         })}
       </div>
