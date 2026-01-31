@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Instagram, ShoppingBag, Users } from 'lucide-react';
 import ImageCarousel3D from "../components/ImageCarousel3D";
-import Enhancedctasection from "../components/Enhancedctasection";
 
 const Home = () => {
   const collections = [
