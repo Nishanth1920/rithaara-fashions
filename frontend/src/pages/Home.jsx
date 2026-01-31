@@ -98,7 +98,7 @@ const Home = () => {
           </motion.div>
 
           {/* Scroll Indicator */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
@@ -107,7 +107,7 @@ const Home = () => {
             <div className="w-6 h-10 border-2 border-accent-400 rounded-full flex justify-center">
               <div className="w-1 h-3 bg-accent-400 rounded-full mt-2 animate-bounce"></div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
