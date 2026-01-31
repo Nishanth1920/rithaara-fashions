@@ -104,147 +104,18 @@ const Home = () => {
   return (
     <div className="overflow-hidden bg-white">
       {/* HERO SECTION */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-primary-100 overflow-hidden">
+      <section id="home" className=" pt-20 sm:pt-28 md:pt-32 relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-primary-100 overflow-hidden">
       {/* Animated Mesh Gradient Background */}
-      <motion.div 
-        className="absolute inset-0 opacity-40"
-        animate={{
-          background: [
-            'radial-gradient(circle at 20% 50%, rgba(219, 39, 119, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 20%, rgba(219, 39, 119, 0.3) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)',
-            'radial-gradient(circle at 20% 50%, rgba(219, 39, 119, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)',
-          ]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Primary Floating Blob - Large */}
-      <motion.div 
-        animate={{ 
-          y: [0, 30, 0],
-          x: [0, 20, 0],
-          scale: [1, 1.1, 1],
-          rotate: [0, 90, 0]
-        }} 
-        transition={{ 
-          duration: 15, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          times: [0, 0.5, 1]
-        }}
-        className="absolute top-10 left-20 w-[28rem] h-[28rem] bg-gradient-to-br from-primary-400 via-primary-300 to-rose-400 rounded-full blur-3xl opacity-30"
-      />
-
-      {/* Secondary Floating Blob - Large */}
-      <motion.div 
-        animate={{ 
-          y: [0, -40, 0],
-          x: [0, -25, 0],
-          scale: [1, 1.15, 1],
-          rotate: [0, -90, 0]
-        }} 
-        transition={{ 
-          duration: 18, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          times: [0, 0.5, 1]
-        }}
-        className="absolute bottom-20 right-10 w-[32rem] h-[32rem] bg-gradient-to-br from-accent-400 via-fuchsia-400 to-rose-500 rounded-full blur-3xl opacity-40"
-      />
-
-      {/* Tertiary Blob - Medium */}
-      <motion.div 
-        animate={{ 
-          y: [0, -25, 0],
-          x: [0, 30, 0],
-          scale: [1, 1.2, 1],
-        }} 
-        transition={{ 
-          duration: 12, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          times: [0, 0.5, 1]
-        }}
-        className="absolute top-1/3 right-1/4 w-[20rem] h-[20rem] bg-gradient-to-br from-rose-300 via-fuchsia-300 to-primary-400 rounded-full blur-3xl opacity-25"
-      />
-
-      {/* Small Accent Blobs */}
-      <motion.div 
-        animate={{ 
-          y: [0, 40, 0],
-          x: [0, -20, 0],
-          opacity: [0.2, 0.4, 0.2]
-        }} 
-        transition={{ 
-          duration: 8, 
-          repeat: Infinity, 
-          ease: "easeInOut"
-        }}
-        className="absolute bottom-1/3 left-1/3 w-[15rem] h-[15rem] bg-gradient-to-br from-primary-200 to-accent-300 rounded-full blur-2xl opacity-20"
-      />
-
-      {/* Floating Particles */}
-      {/* {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 bg-primary-400 rounded-full opacity-40"
-          style={{
-            left: `${15 + i * 15}%`,
-            top: `${20 + i * 10}%`,
-          }}
-          animate={{
-            y: [0, -100, 0],
-            opacity: [0, 0.6, 0],
-          }}
-          transition={{
-            duration: 6 + i,
-            repeat: Infinity,
-            delay: i * 0.8,
-            ease: "easeInOut"
-          }}
-        />
-      ))} */}
-
-      {/* Glowing Orbs */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.5, 1],
-          opacity: [0.1, 0.3, 0.1]
-        }} 
-        transition={{ 
-          duration: 4, 
-          repeat: Infinity, 
-          ease: "easeInOut"
-        }}
-        className="absolute top-1/4 left-1/4 w-40 h-40 bg-rose-400 rounded-full blur-xl opacity-20"
-      />
-
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.3, 1],
-          opacity: [0.15, 0.35, 0.15]
-        }} 
-        transition={{ 
-          duration: 5, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 1
-        }}
-        className="absolute bottom-1/4 right-1/3 w-32 h-32 bg-fuchsia-400 rounded-full blur-xl opacity-25"
-      />
-
-      {/* Shimmer Effect */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10"
-        animate={{
-          x: ['-100%', '100%']
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 4, repeat: Infinity }}
+          className="absolute top-10 left-10 w-48 h-48 bg-rose-500 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+          className="absolute bottom-10 right-10 w-56 h-56 bg-fuchsia-500 rounded-full blur-3xl"
+        />
 
       {/* Content */}
       <div className="relative section-container text-center z-10">
@@ -314,7 +185,7 @@ const Home = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative px-7 py-3.5 bg-gradient-to-r from-rose-600 to-fuchsia-600 text-white rounded-full font-semibold shadow-lg flex items-center gap-2.5 overflow-hidden text-sm"
+                className="group relative px-4 py-2.5 sm:px-7 sm:py-3.5 bg-gradient-to-r from-neutral-900 to-neutral-900 text-white rounded-full font-semibold shadow-lg flex items-center gap-2.5 overflow-hidden text-sm"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-rose-700 to-fuchsia-700 opacity-0 " />
                 <Instagram className="w-4 h-4 relative z-10 group-hover:rotate-12 transition-transform" />
@@ -338,9 +209,10 @@ const Home = () => {
                 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-7 py-3.5 border-2 border-gray-900 text-gray-900 rounded-full font-semibold hover:bg-gray-900 hover:text-white text-sm"
+                className="group relative px-4 py-2.5 sm:px-7 sm:py-3.5 bg-gradient-to-r from-neutral-900 to-neutral-900 text-white rounded-full font-semibold shadow-lg flex items-center gap-2.5 overflow-hidden text-sm"
               >
                 Get in Touch
+                <Phone className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </motion.div>
           </motion.div>
@@ -542,7 +414,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
-              className="inline-flex items-center gap-2.5 px-6 py-3 bg-gradient-to-r from-rose-600 to-fuchsia-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl text-sm"
+              className="inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-7 sm:py-3.5 bg-gradient-to-r from-neutral-900 to-neutral-900 text-white rounded-full font-semibold shadow-lg hover:shadow-xl text-sm"
             >
               <Instagram className="w-4 h-4" />
               <span>@rithaara_fashions</span>
@@ -666,7 +538,7 @@ const Home = () => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3.5 bg-gradient-to-r from-rose-600 to-fuchsia-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2.5 sm:px-7 sm:py-3.5 bg-gradient-to-r from-neutral-900 to-neutral-900 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" />
                   <span>Send Message</span>
@@ -681,7 +553,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <div className=" px-3 py-2.5 sm:px-7 sm:py-3.5 bg-gradient-to-br from-rose-50 to-fuchsia-50 rounded-2xl p-6 border border-rose-200 shadow-md hover:shadow-lg transition-all">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-rose-500 to-fuchsia-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
                     <Phone className="w-6 h-6" />
@@ -694,7 +566,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <div className="px-3 py-2.5 sm:px-7 sm:py-3.5 bg-gradient-to-br from-rose-50 to-fuchsia-50 rounded-2xl p-6 border border-rose-200 shadow-md hover:shadow-lg transition-all">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-rose-500 to-fuchsia-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
                     <Mail className="w-6 h-6" />
@@ -707,7 +579,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <div className="px-3 py-2.5 sm:px-7 sm:py-3.5 bg-gradient-to-br from-rose-50 to-fuchsia-50 rounded-2xl p-6 border border-rose-200 shadow-md hover:shadow-lg transition-all">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-rose-500 to-fuchsia-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
                     <MapPin className="w-6 h-6" />
@@ -818,7 +690,7 @@ const Home = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-className="group px-7 py-3.5 bg-neutral-900 text-white font-bold rounded-full hover:bg-neutral-800 shadow-xl flex items-center gap-2.5 text-sm"
+className="group px-4 py-2.5 sm:px-7 sm:py-3.5 bg-neutral-900 text-white font-bold rounded-full hover:bg-neutral-800 shadow-xl flex items-center gap-2.5 text-sm"
             >
               <Instagram className="w-4 h-4 group-hover:rotate-12 transition-transform" />
               <span>Start Shopping</span>
@@ -837,7 +709,7 @@ className="group px-7 py-3.5 bg-neutral-900 text-white font-bold rounded-full ho
               }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="px-7 py-3.5 border-2 border-dark text-dark font-bold rounded-full hover:bg-dark hover:text-dark text-sm"
+              className="px-4 py-2.5 sm:px-7 sm:py-3.5 border-2 border-dark text-dark font-bold rounded-full hover:bg-dark hover:text-dark text-sm"
             >
               Contact Us
             </motion.button>
@@ -848,7 +720,7 @@ className="group px-7 py-3.5 bg-neutral-900 text-white font-bold rounded-full ho
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="mt-10 flex flex-wrap justify-center gap-6 text-white/80"
+            className="mt-10 flex flex-wrap justify-center gap-6 text-dark/80"
           >
             {[
               { icon: <Award className="w-4 h-4" />, text: "Premium Quality" },
