@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { Instagram } from 'lucide-react'
 
-import img1 from "../assets/home-images/saree1.jpeg";
-import img2 from "../assets/home-images/saree2.jpeg";
-import img3 from "../assets/home-images/saree3.jpeg";
-import img4 from "../assets/home-images/saree4.jpeg";
-import img5 from "../assets/home-images/saree5.jpeg";
-import img6 from "../assets/home-images/saree6.jpg";
-import img7 from "../assets/home-images/saree7.jpg";
-import img8 from "../assets/home-images/saree8.jpg";
+import img1 from "../public/home-images/saree1.jpeg";
+import img2 from "../public/home-images/saree2.jpeg";
+import img3 from "../public/home-images/saree3.jpeg";
+import img4 from "../public/home-images/saree4.jpeg";
+import img5 from "../public/home-images/saree5.jpeg";
+import img6 from "../public/home-images/saree6.jpg";
+import img7 from "../public/home-images/saree7.jpg";
+import img8 from "../public/home-images/saree8.jpg";
 
 const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 
